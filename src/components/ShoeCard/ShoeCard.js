@@ -64,12 +64,14 @@ const Link = styled.a`
 const Tag = styled.div`
   padding: 7px 9px 9px 11px;
   background-color: ${({ variant }) =>
-    variant === "on-sale" ? COLORS.secondary : COLORS.primary};
+    variant === "on-sale" ? COLORS.primary : COLORS.secondary};
   color: ${COLORS.white};
   position: absolute;
   top: 12px;
   right: -4px;
   font-size: 14px;
+  font-weight: 700;
+  border-radius: 2px;
 `;
 const Wrapper = styled.article``;
 
