@@ -36,6 +36,11 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {variant !== "default" && (
+            <Tag variant={variant}>
+              {variant === "new-release" ? "Just Released!" : "Sale"}{" "}
+            </Tag>
+          )}
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
@@ -56,16 +61,26 @@ const Link = styled.a`
   flex: 1 0 300px;
 `;
 
+const Tag = styled.div`
+  padding: 7px 9px 9px 11px;
+  background-color: ${({ variant }) =>
+    variant === "on-sale" ? COLORS.secondary : COLORS.primary};
+  color: ${COLORS.white};
+  position: absolute;
+  top: 12px;
+  right: -4px;
+  font-size: 14px;
+`;
 const Wrapper = styled.article``;
 
 const ImageWrapper = styled.div`
   position: relative;
-  border-radius: 16px 16px 4px 4px;
-  overflow: hidden;
 `;
 
 const Image = styled.img`
   width: 100%;
+  border-radius: 16px 16px 4px 4px;
+  overflow: hidden;
 `;
 
 const Row = styled.div`
